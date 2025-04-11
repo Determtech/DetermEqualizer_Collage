@@ -21,6 +21,8 @@
 #ifndef CO_OBJECT_H
 #define CO_OBJECT_H
 
+#include <limits>
+
 #include <co/dispatcher.h> // base class
 #include <co/localNode.h>  // used in RefPtr
 #include <co/types.h>      // for Nodes
