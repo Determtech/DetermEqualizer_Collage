@@ -1,8 +1,7 @@
-
 # Copyright (c) 2010-2017 Daniel Pfeifer <daniel@pfeifer-mail.de>
 #                         Stefan Eilemann <eile@eyescale.ch>
 
-cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 project(Collage VERSION 1.7.0)
 set(Collage_VERSION_ABI 7)
 
