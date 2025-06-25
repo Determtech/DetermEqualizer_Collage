@@ -153,6 +153,9 @@ public:
     CO_API static std::ostream& printStatistics(std::ostream&); //!< @internal
     CO_API static void clearStatistics();                       //!< @internal
 
+    /** Write a number of bytes from data into the stream. */
+    CO_API void _write(const void* data, uint64_t size);
+
 protected:
     CO_API explicit DataOStream(
         size_t chunkSize = Global::getObjectBufferSize()); //!< @internal
@@ -207,9 +210,6 @@ private:
     CO_API uint64_t _getCompressedData(const uint8_t** chunks,
                                        uint64_t* chunkSizes) const;
 
-    /** Write a number of bytes from data into the stream. */
-    CO_API void _write(const void* data, uint64_t size);
-
     /** Helper function preparing data for sendData() as needed. */
     void _sendData(const void* data, const uint64_t size);
 
@@ -263,7 +263,7 @@ private:
     /** Send the trailing data (command) to the receivers */
     void _sendFooter(const void* buffer, const uint64_t size);
 };
-}
+} // namespace co
 
 #include "dataOStream.ipp" // template implementation
 

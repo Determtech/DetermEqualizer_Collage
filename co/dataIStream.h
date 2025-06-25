@@ -166,6 +166,9 @@ public:
     CO_API virtual LocalNodePtr getLocalNode() const = 0;
     //@}
 
+    /** Read a number of bytes from the stream into a buffer. */
+    CO_API void _read(void* data, uint64_t size);
+
 protected:
     /** @name Internal */
     //@{
@@ -178,9 +181,6 @@ protected:
 
 private:
     detail::DataIStream* const _impl;
-
-    /** Read a number of bytes from the stream into a buffer. */
-    CO_API void _read(void* data, uint64_t size);
 
     /**
      * Check that the current buffer has data left, get the next buffer is
@@ -232,7 +232,7 @@ private:
     template <class T>
     void _readArray(Array<T>, const boost::false_type&);
 };
-}
+} // namespace co
 
 #include "dataIStream.ipp" // template implementation
 
